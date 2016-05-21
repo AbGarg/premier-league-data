@@ -62,46 +62,26 @@ Below is a list of columns available in the dataset with a rough description of 
 
 Data exploration examples using `pandas`.
 
-#### What data is available?
+#### How to read the data into a `Pandas.DataFrame`?
 
 ```python
 In [1]: import pandas as pd
 
 In [2]: df = pd.read_csv('2015-16/data.csv')
-
-In [3]: df.columns
-Out[3]:
-Index([u'assists_away_team', u'assists_home_team', u'attendance',
-       u'away_goals', u'away_goals_details', u'away_manager', u'away_team',
-       u'blocks_away_team', u'blocks_home_team', u'clearances_away_team',
-       u'clearances_home_team', u'corners_away_team', u'corners_home_team',
-       u'crosses_away_team', u'crosses_home_team', u'date', u'fouls_away_team',
-       u'fouls_home_team', u'free_kicks_away_team', u'free_kicks_home_team',
-       u'handballs_away_team', u'handballs_home_team', u'home_goals',
-       u'home_goals_details', u'home_manager', u'home_team',
-       u'offsides_away_team', u'offsides_home_team', u'penalties_away_team',
-       u'penalties_home_team', u'red_cards_away_team', u'red_cards_home_team',
-       u'referee', u'result', u'saves_away_team', u'saves_home_team',
-       u'season', u'shots_off_target_away_team', u'shots_off_target_home_team',
-       u'shots_on_target_away_team', u'shots_on_target_home_team',
-       u'throw_ins_away_team', u'throw_ins_home_team',
-       u'total_shots_away_team', u'total_shots_home_team', u'venue',
-       u'yellow_cards_away_team', u'yellow_cards_home_team'],
-      dtype='object')
 ```
 
 #### How many shots have Leicester taken when playing in home this season?
 
 ```python
 In [4]: sum(df[df.home_team == 'Leicester'].total_shots_home_team)
-Out[4]: 155
+Out[4]: 204
 ```
 
 #### How many goals have Man Utd scored so far this season?
 
 ```python
 In [5]: sum(df[df.home_team == 'Man Utd'].home_goals) + sum(df[df.away_team == 'Man Utd'].away_goals)
-Out[5]: 38
+Out[5]: 49
 ```
 
 
